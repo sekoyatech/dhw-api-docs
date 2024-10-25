@@ -1,0 +1,9 @@
+urls:
+  base_url: http://dhwapp-lb-954250669.us-east-1.elb.amazonaws.com
+  contact: /pages/contact
+  about-us: /pages/about-us
+  privacy-policy: /pages/privacy-policy
+  terms-of-service: /pages/terms-of-service
+  faq: /pages/faq
+  gdpr: /pages/gdpr
+
