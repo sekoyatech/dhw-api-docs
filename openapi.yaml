@@ -1,0 +1,2084 @@
+openapi: 3.0.1
+info:
+  title: DHW API
+  description: Digital Health Wristband API
+  termsOfService: 'https://www.gnu.org/licenses/agpl-3.0.en.html'
+  contact:
+    name: 'Sekoya Team'
+    url: 'https://github.com/sekoyatech/dhw-api'
+    email: 'info@sekoya.tech'
+  license:
+    name: 'GNU AGPLv3'
+    url: 'https://www.gnu.org/licenses/agpl-3.0.en.html'
+  version: 0.0.1
+servers:
+  - url: https://dhw-api.onrender.com
+    description: Generated server url
+  - url: http://localhost:8080
+    description: Local server 8080
+  - url: http://localhost:9000
+    description: Local server 9000
+  - url: https://api.dhw.com
+    description: Production server
+paths:
+  /api/system-parameters/{id}:
+    get:
+      tags:
+        - system-parameter-resource
+      operationId: getSystemParameter
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/SystemParameter'
+    put:
+      tags:
+        - system-parameter-resource
+      operationId: updateSystemParameter
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SystemParameter'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/SystemParameter'
+    patch:
+      tags:
+        - system-parameter-resource
+      operationId: partialUpdateSystemParameter
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SystemParameter'
+          application/merge-patch+json:
+            schema:
+              $ref: '#/components/schemas/SystemParameter'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/SystemParameter'
+  /api/reference-codes/{id}:
+    get:
+      tags:
+        - reference-code-resource
+      operationId: getReferenceCode
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/ReferenceCode'
+    put:
+      tags:
+        - reference-code-resource
+      operationId: updateReferenceCode
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ReferenceCode'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/ReferenceCode'
+    delete:
+      tags:
+        - reference-code-resource
+      operationId: deleteReferenceCode
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+    patch:
+      tags:
+        - reference-code-resource
+      operationId: partialUpdateReferenceCode
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ReferenceCode'
+          application/merge-patch+json:
+            schema:
+              $ref: '#/components/schemas/ReferenceCode'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/ReferenceCode'
+  /api/menus/{id}:
+    get:
+      tags:
+        - menu-resource
+      operationId: getMenu
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/Menu'
+    put:
+      tags:
+        - menu-resource
+      operationId: updateMenu
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Menu'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/Menu'
+    delete:
+      tags:
+        - menu-resource
+      operationId: deleteMenu
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+    patch:
+      tags:
+        - menu-resource
+      operationId: partialUpdateMenu
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Menu'
+          application/merge-patch+json:
+            schema:
+              $ref: '#/components/schemas/Menu'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/Menu'
+  /api/devices/{id}:
+    get:
+      tags:
+        - device-resource
+      operationId: getDevice
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/DeviceDTO'
+    put:
+      tags:
+        - device-resource
+      operationId: updateDevice
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DeviceDTO'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/DeviceDTO'
+    delete:
+      tags:
+        - device-resource
+      operationId: deleteDevice
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+    patch:
+      tags:
+        - device-resource
+      operationId: partialUpdateDevice
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DeviceDTO'
+          application/merge-patch+json:
+            schema:
+              $ref: '#/components/schemas/DeviceDTO'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/DeviceDTO'
+  /api/application-users/{id}:
+    get:
+      tags:
+        - application-user-resource
+      operationId: getApplicationUser
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/ApplicationUserDTO'
+    put:
+      tags:
+        - application-user-resource
+      operationId: updateApplicationUser
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ApplicationUserDTO'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/ApplicationUserDTO'
+    delete:
+      tags:
+        - application-user-resource
+      operationId: deleteApplicationUser
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+    patch:
+      tags:
+        - application-user-resource
+      operationId: partialUpdateApplicationUser
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ApplicationUserDTO'
+          application/merge-patch+json:
+            schema:
+              $ref: '#/components/schemas/ApplicationUserDTO'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/ApplicationUserDTO'
+  /api/admin/users/{login}:
+    get:
+      tags:
+        - user-resource
+      operationId: getUser
+      parameters:
+        - name: login
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/AdminUserDTO'
+    put:
+      tags:
+        - user-resource
+      operationId: updateUser
+      parameters:
+        - name: login
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AdminUserDTO'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/AdminUserDTO'
+    delete:
+      tags:
+        - user-resource
+      operationId: deleteUser
+      parameters:
+        - name: login
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+  /api/admin/users:
+    get:
+      tags:
+        - user-resource
+      operationId: getAllUsers
+      parameters:
+        - name: page
+          in: query
+          description: Zero-based page index (0..N)
+          required: false
+          schema:
+            minimum: 0
+            type: integer
+            default: 0
+        - name: size
+          in: query
+          description: The size of the page to be returned
+          required: false
+          schema:
+            minimum: 1
+            type: integer
+            default: 20
+        - name: sort
+          in: query
+          description: >-
+            Sorting criteria in the format: property,(asc|desc). Default sort
+            order is ascending. Multiple sort criteria are supported.
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/AdminUserDTO'
+    put:
+      tags:
+        - user-resource
+      operationId: updateUser_1
+      parameters: [ ]
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AdminUserDTO'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/AdminUserDTO'
+    post:
+      tags:
+        - user-resource
+      operationId: createUser
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AdminUserDTO'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/User'
+  /api/system-parameters:
+    get:
+      tags:
+        - system-parameter-resource
+      operationId: getAllSystemParameters
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/SystemParameter'
+    post:
+      tags:
+        - system-parameter-resource
+      operationId: createSystemParameter
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SystemParameter'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/SystemParameter'
+  /api/register:
+    post:
+      tags:
+        - account-resource
+      operationId: registerAccount
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ManagedUserVM'
+        required: true
+      responses:
+        '201':
+          description: Created
+  /api/reference-types:
+    get:
+      tags:
+        - reference-type-resource
+      operationId: getAllReferenceTypes
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ReferenceType'
+    post:
+      tags:
+        - reference-type-resource
+      operationId: createReferenceType
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ReferenceType'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/ReferenceType'
+  /api/reference-codes:
+    get:
+      tags:
+        - reference-code-resource
+      operationId: getAllReferenceCodes
+      parameters:
+        - name: eagerload
+          in: query
+          required: false
+          schema:
+            type: boolean
+            default: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ReferenceCode'
+    post:
+      tags:
+        - reference-code-resource
+      operationId: createReferenceCode
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ReferenceCode'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/ReferenceCode'
+  /api/menus:
+    get:
+      tags:
+        - menu-resource
+      operationId: getAllMenus
+      parameters:
+        - name: eagerload
+          in: query
+          required: false
+          schema:
+            type: boolean
+            default: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Menu'
+    post:
+      tags:
+        - menu-resource
+      operationId: createMenu
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Menu'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/Menu'
+  /api/health-data:
+    get:
+      tags:
+        - health-data-resource
+      operationId: getAllHealthData
+      parameters:
+        - name: page
+          in: query
+          description: Zero-based page index (0..N)
+          required: false
+          schema:
+            minimum: 0
+            type: integer
+            default: 0
+        - name: size
+          in: query
+          description: The size of the page to be returned
+          required: false
+          schema:
+            minimum: 1
+            type: integer
+            default: 20
+        - name: sort
+          in: query
+          description: >-
+            Sorting criteria in the format: property,(asc|desc). Default sort
+            order is ascending. Multiple sort criteria are supported.
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+        - name: eagerload
+          in: query
+          required: false
+          schema:
+            type: boolean
+            default: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/HealthDataDTO'
+    post:
+      tags:
+        - health-data-resource
+      operationId: createHealthData
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/HealthDataCreate'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/HealthDataDTO'
+  /api/devices:
+    get:
+      tags:
+        - device-resource
+      operationId: getAllDevices
+      parameters:
+        - name: page
+          in: query
+          description: Zero-based page index (0..N)
+          required: false
+          schema:
+            minimum: 0
+            type: integer
+            default: 0
+        - name: size
+          in: query
+          description: The size of the page to be returned
+          required: false
+          schema:
+            minimum: 1
+            type: integer
+            default: 20
+        - name: sort
+          in: query
+          description: >-
+            Sorting criteria in the format: property,(asc|desc). Default sort
+            order is ascending. Multiple sort criteria are supported.
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DeviceDTO'
+    post:
+      tags:
+        - device-resource
+      operationId: createDevice
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DeviceDTO'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/DeviceDTO'
+  /api/authorities:
+    get:
+      tags:
+        - authority-resource
+      operationId: getAllAuthorities
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Authority'
+    post:
+      tags:
+        - authority-resource
+      operationId: createAuthority
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Authority'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/Authority'
+  /api/authenticate:
+    get:
+      tags:
+        - authenticate-controller
+      operationId: isAuthenticated
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                type: string
+    post:
+      tags:
+        - authenticate-controller
+      operationId: authorize
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LoginVM'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/JWTToken'
+  /api/application-users:
+    get:
+      tags:
+        - application-user-resource
+      operationId: getAllApplicationUsers
+      parameters:
+        - name: page
+          in: query
+          description: Zero-based page index (0..N)
+          required: false
+          schema:
+            minimum: 0
+            type: integer
+            default: 0
+        - name: size
+          in: query
+          description: The size of the page to be returned
+          required: false
+          schema:
+            minimum: 1
+            type: integer
+            default: 20
+        - name: sort
+          in: query
+          description: >-
+            Sorting criteria in the format: property,(asc|desc). Default sort
+            order is ascending. Multiple sort criteria are supported.
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+        - name: eagerload
+          in: query
+          required: false
+          schema:
+            type: boolean
+            default: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ApplicationUserDTO'
+    post:
+      tags:
+        - application-user-resource
+      operationId: createApplicationUser
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ApplicationUserDTO'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/ApplicationUserDTO'
+  /api/account:
+    get:
+      tags:
+        - account-resource
+      operationId: getAccount
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/AdminUserDTO'
+    post:
+      tags:
+        - account-resource
+      operationId: saveAccount
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AdminUserDTO'
+        required: true
+      responses:
+        '200':
+          description: OK
+  /api/account/reset-password/init:
+    post:
+      tags:
+        - account-resource
+      operationId: requestPasswordReset
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: string
+        required: true
+      responses:
+        '200':
+          description: OK
+  /api/account/reset-password/finish:
+    post:
+      tags:
+        - account-resource
+      operationId: finishPasswordReset
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/KeyAndPasswordVM'
+        required: true
+      responses:
+        '200':
+          description: OK
+  /api/account/change-password:
+    post:
+      tags:
+        - account-resource
+      operationId: changePassword
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PasswordChangeDTO'
+        required: true
+      responses:
+        '200':
+          description: OK
+  /api/users:
+    get:
+      tags:
+        - public-user-resource
+      operationId: getAllPublicUsers
+      parameters:
+        - name: page
+          in: query
+          description: Zero-based page index (0..N)
+          required: false
+          schema:
+            minimum: 0
+            type: integer
+            default: 0
+        - name: size
+          in: query
+          description: The size of the page to be returned
+          required: false
+          schema:
+            minimum: 1
+            type: integer
+            default: 20
+        - name: sort
+          in: query
+          description: >-
+            Sorting criteria in the format: property,(asc|desc). Default sort
+            order is ascending. Multiple sort criteria are supported.
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/UserDTO'
+  /api/reference-types/{id}:
+    get:
+      tags:
+        - reference-type-resource
+      operationId: getReferenceType
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/ReferenceType'
+  /api/reference-codes/reference-types/{typeId}:
+    get:
+      tags:
+        - reference-code-resource
+      operationId: getReferenceCodeByType
+      parameters:
+        - name: typeId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ReferenceCode'
+  /api/menus/parent/{parentId}:
+    get:
+      tags:
+        - menu-resource
+      operationId: getAllMenusByParent
+      parameters:
+        - name: parentId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Menu'
+  /api/menus/filter:
+    get:
+      tags:
+        - menu-resource
+      operationId: list
+      parameters:
+        - name: filter
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  type: string
+  /api/health-data/{id}:
+    get:
+      tags:
+        - health-data-resource
+      operationId: getHealthData
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/HealthDataDTO'
+  /api/health-data/filter:
+    get:
+      tags:
+        - health-data-resource
+      operationId: list_1
+      parameters:
+        - name: filter
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: page
+          in: query
+          description: Zero-based page index (0..N)
+          required: false
+          schema:
+            minimum: 0
+            type: integer
+            default: 0
+        - name: size
+          in: query
+          description: The size of the page to be returned
+          required: false
+          schema:
+            minimum: 1
+            type: integer
+            default: 20
+        - name: sort
+          in: query
+          description: >-
+            Sorting criteria in the format: property,(asc|desc). Default sort
+            order is ascending. Multiple sort criteria are supported.
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  type: string
+  /api/health-data/devices/{deviceId}:
+    get:
+      tags:
+        - health-data-resource
+      operationId: findAllByDeviceId
+      parameters:
+        - name: deviceId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: page
+          in: query
+          description: Zero-based page index (0..N)
+          required: false
+          schema:
+            minimum: 0
+            type: integer
+            default: 0
+        - name: size
+          in: query
+          description: The size of the page to be returned
+          required: false
+          schema:
+            minimum: 1
+            type: integer
+            default: 20
+        - name: sort
+          in: query
+          description: >-
+            Sorting criteria in the format: property,(asc|desc). Default sort
+            order is ascending. Multiple sort criteria are supported.
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/HealthDataDTO'
+  /api/devices/filter:
+    get:
+      tags:
+        - device-resource
+      operationId: list_2
+      parameters:
+        - name: filter
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: page
+          in: query
+          description: Zero-based page index (0..N)
+          required: false
+          schema:
+            minimum: 0
+            type: integer
+            default: 0
+        - name: size
+          in: query
+          description: The size of the page to be returned
+          required: false
+          schema:
+            minimum: 1
+            type: integer
+            default: 20
+        - name: sort
+          in: query
+          description: >-
+            Sorting criteria in the format: property,(asc|desc). Default sort
+            order is ascending. Multiple sort criteria are supported.
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  type: string
+  /api/authorities/{id}:
+    get:
+      tags:
+        - authority-resource
+      operationId: getAuthority
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/Authority'
+    delete:
+      tags:
+        - authority-resource
+      operationId: deleteAuthority
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+  /api/activate:
+    get:
+      tags:
+        - account-resource
+      operationId: activateAccount
+      parameters:
+        - name: key
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+components:
+  schemas:
+    SystemParameter:
+      required:
+        - parameterKey
+        - parameterValue
+      type: object
+      properties:
+        id:
+          type: string
+        parameterKey:
+          maxLength: 100
+          minLength: 2
+          type: string
+          description: Parameter key name for runtime usage in the system
+        parameterValue:
+          maxLength: 4000
+          minLength: 0
+          type: string
+          description: Parameter value for runtime usage in the system
+        description:
+          maxLength: 4000
+          minLength: 0
+          type: string
+          description: Human-readable entity description
+        active:
+          type: boolean
+          description: Record status active or vise versa
+        createdBy:
+          maxLength: 100
+          minLength: 0
+          type: string
+          description: Record created by
+        createdDate:
+          type: string
+          description: Record created date
+          format: date-time
+        lastModifiedBy:
+          maxLength: 100
+          minLength: 0
+          type: string
+          description: Record last modified by
+        lastModifiedDate:
+          type: string
+          description: Record last modified date
+          format: date-time
+      description: >-
+        ParameterCode entity that holds the parameter code information. example
+        : api_key, api_secret, db_username etc.
+    ReferenceCode:
+      required:
+        - code
+        - name
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          maxLength: 100
+          minLength: 2
+          type: string
+          description: Name of the reference code
+        code:
+          maxLength: 100
+          minLength: 2
+          type: string
+          description: Reference code code like enum value for writing code
+        description:
+          maxLength: 4000
+          minLength: 0
+          type: string
+          description: Human-readable entity description
+        orderPriority:
+          type: integer
+          description: Record status active or vise versa
+          format: int32
+        active:
+          type: boolean
+          description: Record status active or vise versa
+        createdBy:
+          maxLength: 100
+          minLength: 0
+          type: string
+          description: Record created by
+        createdDate:
+          type: string
+          description: Record created date
+          format: date-time
+        lastModifiedBy:
+          maxLength: 100
+          minLength: 0
+          type: string
+          description: Record last modified by
+        lastModifiedDate:
+          type: string
+          description: Record last modified date
+          format: date-time
+        referenceType:
+          $ref: '#/components/schemas/ReferenceType'
+      description: >-
+        ReferenceCode entity that holds the reference code information by
+        reference type. example: Currency.USD, Currency.EUR, Status.ACTIVE,
+        Status.INACTIVE etc.
+    ReferenceType:
+      required:
+        - code
+        - name
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          maxLength: 100
+          minLength: 2
+          type: string
+          description: Name of the entity
+        code:
+          maxLength: 100
+          minLength: 2
+          type: string
+          description: Reference type code like enum value for writing code
+        description:
+          maxLength: 4000
+          minLength: 0
+          type: string
+          description: Human-readable entity description
+        active:
+          type: boolean
+          description: Record status active or vise versa
+        createdBy:
+          maxLength: 100
+          minLength: 0
+          type: string
+          description: Record created by
+        createdDate:
+          type: string
+          description: Record created date
+          format: date-time
+        lastModifiedBy:
+          maxLength: 100
+          minLength: 0
+          type: string
+          description: Record last modified by
+        lastModifiedDate:
+          type: string
+          description: Record last modified date
+          format: date-time
+      description: >-
+        ReferenceType entity that holds the reference type information. example
+        : Currency, Status etc.
+    Authority:
+      required:
+        - name
+      type: object
+      properties:
+        name:
+          maxLength: 50
+          minLength: 0
+          type: string
+      description: Grant access to the menu to the authority
+    Menu:
+      required:
+        - name
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          maxLength: 100
+          minLength: 2
+          type: string
+          description: Name of the menu
+        description:
+          maxLength: 4000
+          minLength: 0
+          type: string
+          description: Human-readable entity description
+        url:
+          maxLength: 4000
+          minLength: 0
+          type: string
+          description: >-
+            Menu url or route path for User Interface like mobile or web
+            application
+        icon:
+          maxLength: 100
+          minLength: 0
+          type: string
+          description: Menu icon for User Interface like mobile or web application
+        orderPriority:
+          type: integer
+          description: Menu order priority for User Interface
+          format: int32
+        active:
+          type: boolean
+          description: Record status active or vise versa
+        level:
+          type: integer
+          description: Menu level for Parent Child relationship
+          format: int32
+        parent:
+          $ref: '#/components/schemas/Menu'
+        authorities:
+          uniqueItems: true
+          type: array
+          description: Grant access to the menu to the authority
+          items:
+            $ref: '#/components/schemas/Authority'
+      description: >-
+        Menu entity that holds the menu information. example : Home, User
+        Management, Company Management etc.
+    DeviceDTO:
+      required:
+        - active
+        - name
+        - type
+      type: object
+      properties:
+        id:
+          type: string
+        uuid:
+          maxLength: 50
+          minLength: 2
+          type: string
+          description: Device Id is unique identifier for device
+        name:
+          maxLength: 250
+          minLength: 2
+          type: string
+          description: Device Name is name of device, unique for each device
+        type:
+          type: string
+          description: >-
+            Device Type is type of device, for example wristband, apple-watch,
+            samsung-watch, etc..
+          enum:
+            - APPLE_WATCH_SE
+            - SAMSUNG_WATCH_GT2
+        description:
+          maxLength: 4000
+          minLength: 2
+          type: string
+          description: Device Description is description of device
+        manufacturerType:
+          type: string
+          description: Device Manufacturer is manufacturer of device
+          enum:
+            - APPLE
+            - SAMSUNG
+        active:
+          type: boolean
+          description: Device enabled status
+        createdDate:
+          type: string
+          description: Device created date
+          format: date-time
+        createdBy:
+          maxLength: 50
+          minLength: 2
+          type: string
+          description: Device created by user
+        lastUpdatedDate:
+          type: string
+          description: Device last updated date
+          format: date-time
+        lastUpdatedBy:
+          maxLength: 50
+          minLength: 2
+          type: string
+          description: Device last updated by user
+      description: >-
+        Device type and information, for example wristband, apple-watch,
+        samsung-watch, etc..
+    ApplicationUserDTO:
+      required:
+        - phoneNumber
+      type: object
+      properties:
+        id:
+          type: string
+        uuid:
+          maxLength: 50
+          minLength: 2
+          type: string
+          description: User Id is unique identifier for user
+        phoneNumber:
+          maxLength: 50
+          minLength: 2
+          type: string
+          description: Phone number of user
+        gender:
+          type: string
+          description: gender information of user
+          enum:
+            - MALE
+            - FEMALE
+            - UNDEFINED
+        birthDate:
+          type: string
+          description: birth date of user
+          format: date
+        bloodType:
+          type: string
+          description: blood type of user
+          enum:
+            - A_RH_POSITIVE
+            - A_RH_NEGATIVE
+            - B_RH_POSITIVE
+            - B_RH_NEGATIVE
+            - AB_RH_POSITIVE
+            - AB_RH_NEGATIVE
+            - O_RH_POSITIVE
+            - O_RH_NEGATIVE
+        weight:
+          type: number
+          description: weight of user
+          format: double
+        height:
+          type: number
+          description: height of user
+          format: double
+        internalUser:
+          $ref: '#/components/schemas/UserDTO'
+        additionalValues:
+          uniqueItems: true
+          type: array
+          description: additional values
+          items:
+            $ref: '#/components/schemas/KeyValueMapping'
+      description: Additional User information
+    KeyValueMapping:
+      required:
+        - key
+        - value
+      type: object
+      properties:
+        key:
+          maxLength: 50
+          minLength: 2
+          type: string
+          description: Key of mapping data for additional information
+        value:
+          maxLength: 4000
+          minLength: 2
+          type: string
+          description: Value of mapping data for additional information
+      description: Key value map for additional information
+    UserDTO:
+      type: object
+      properties:
+        id:
+          type: string
+        login:
+          type: string
+      description: user information
+    AdminUserDTO:
+      required:
+        - login
+      type: object
+      properties:
+        id:
+          type: string
+        login:
+          maxLength: 50
+          minLength: 1
+          type: string
+        firstName:
+          maxLength: 50
+          minLength: 0
+          type: string
+        lastName:
+          maxLength: 50
+          minLength: 0
+          type: string
+        email:
+          maxLength: 254
+          minLength: 5
+          type: string
+        imageUrl:
+          maxLength: 256
+          minLength: 0
+          type: string
+        activated:
+          type: boolean
+        langKey:
+          maxLength: 10
+          minLength: 2
+          type: string
+        createdBy:
+          type: string
+        createdDate:
+          type: string
+          format: date-time
+        lastModifiedBy:
+          type: string
+        lastModifiedDate:
+          type: string
+          format: date-time
+        authorities:
+          uniqueItems: true
+          type: array
+          items:
+            type: string
+    ManagedUserVM:
+      required:
+        - login
+      type: object
+      properties:
+        id:
+          type: string
+        login:
+          maxLength: 50
+          minLength: 1
+          type: string
+        firstName:
+          maxLength: 50
+          minLength: 0
+          type: string
+        lastName:
+          maxLength: 50
+          minLength: 0
+          type: string
+        email:
+          maxLength: 254
+          minLength: 5
+          type: string
+        imageUrl:
+          maxLength: 256
+          minLength: 0
+          type: string
+        activated:
+          type: boolean
+        langKey:
+          maxLength: 10
+          minLength: 2
+          type: string
+        createdBy:
+          type: string
+        createdDate:
+          type: string
+          format: date-time
+        lastModifiedBy:
+          type: string
+        lastModifiedDate:
+          type: string
+          format: date-time
+        authorities:
+          uniqueItems: true
+          type: array
+          items:
+            type: string
+        password:
+          maxLength: 100
+          minLength: 4
+          type: string
+    HealthDataCreate:
+      required:
+        - type
+      type: object
+      properties:
+        uuid:
+          maxLength: 50
+          minLength: 2
+          type: string
+          description: Health Data Id is unique identifier for health data
+        type:
+          type: string
+          description: >-
+            Health Data Type is type of health data, for example heart-rate,
+            steps, etc..
+          enum:
+            - WEIGHT
+            - STEPS
+            - HEART_RATE
+            - HEIGHT
+        unit:
+          type: string
+          description: >-
+            Health Data Unit is unit of health data, for example BPM, steps,
+            etc..
+          enum:
+            - BEATS_PER_MINUTE
+            - METER
+            - COUNT
+            - KILOGRAM
+        dateFrom:
+          type: string
+          description: The start of the time interval
+          format: date-time
+        dateTo:
+          type: string
+          description: The end of the time interval
+          format: date-time
+        sourcePlatform:
+          type: string
+          description: The health platform that this data point was fetched from
+          enum:
+            - APPLE_HEALTH
+            - GOOGLE_HEALTH_CONNECT
+        sourceDeviceId:
+          maxLength: 50
+          minLength: 2
+          type: string
+          description: The id of the device from which the data point was fetched.
+        sourceId:
+          maxLength: 50
+          minLength: 2
+          type: string
+          description: The id of the source from which the data point was fetched.
+        sourceName:
+          maxLength: 50
+          minLength: 2
+          type: string
+          description: The name of the source from which the data point was fetched.
+        recordingMethod:
+          type: string
+          description: >-
+            The method of recording the data point, how the data point was
+            recorded(unknown, manual, automatic, active)
+          enum:
+            - UNKNOWN
+            - MANUAL
+            - AUTOMATIC
+            - ACTIVE
+        createdDate:
+          type: string
+          description: Health Data created date
+          format: date-time
+        createdBy:
+          maxLength: 50
+          minLength: 2
+          type: string
+          description: Health Data created by user
+        lastUpdatedDate:
+          type: string
+          description: Health Data last updated date
+          format: date-time
+        lastUpdatedBy:
+          maxLength: 50
+          minLength: 2
+          type: string
+          description: Health Data last updated by user
+        device:
+          $ref: '#/components/schemas/DeviceDTO'
+        metadata:
+          uniqueItems: true
+          type: array
+          description: Metadata for health data
+          items:
+            $ref: '#/components/schemas/KeyValueMapping'
+        healthValues:
+          uniqueItems: true
+          type: array
+          items:
+            $ref: '#/components/schemas/HealthValueDTO'
+      description: >-
+        HealthData stores device health data, this is generic entity for all
+        health data
+    HealthValueDTO:
+      type: object
+      properties:
+        value:
+          maxLength: 4000
+          minLength: 2
+          type: string
+          description: value of health data, numeric, string, list etc..
+        additionalData:
+          uniqueItems: true
+          type: array
+          description: additional values
+          items:
+            $ref: '#/components/schemas/KeyValueMapping'
+      description: extended, generic value for health data
+    HealthDataDTO:
+      required:
+        - type
+      type: object
+      properties:
+        id:
+          type: string
+        uuid:
+          maxLength: 50
+          minLength: 2
+          type: string
+          description: Health Data Id is unique identifier for health data
+        type:
+          type: string
+          description: >-
+            Health Data Type is type of health data, for example heart-rate,
+            steps, etc..
+          enum:
+            - WEIGHT
+            - STEPS
+            - HEART_RATE
+            - HEIGHT
+        unit:
+          type: string
+          description: >-
+            Health Data Unit is unit of health data, for example BPM, steps,
+            etc..
+          enum:
+            - BEATS_PER_MINUTE
+            - METER
+            - COUNT
+            - KILOGRAM
+        dateFrom:
+          type: string
+          description: The start of the time interval
+          format: date-time
+        dateTo:
+          type: string
+          description: The end of the time interval
+          format: date-time
+        sourcePlatform:
+          type: string
+          description: The health platform that this data point was fetched from
+          enum:
+            - APPLE_HEALTH
+            - GOOGLE_HEALTH_CONNECT
+        sourceDeviceId:
+          maxLength: 50
+          minLength: 2
+          type: string
+          description: The id of the device from which the data point was fetched.
+        sourceId:
+          maxLength: 50
+          minLength: 2
+          type: string
+          description: The id of the source from which the data point was fetched.
+        sourceName:
+          maxLength: 50
+          minLength: 2
+          type: string
+          description: The name of the source from which the data point was fetched.
+        recordingMethod:
+          type: string
+          description: >-
+            The method of recording the data point, how the data point was
+            recorded(unknown, manual, automatic, active)
+          enum:
+            - UNKNOWN
+            - MANUAL
+            - AUTOMATIC
+            - ACTIVE
+        createdDate:
+          type: string
+          description: Health Data created date
+          format: date-time
+        createdBy:
+          maxLength: 50
+          minLength: 2
+          type: string
+          description: Health Data created by user
+        lastUpdatedDate:
+          type: string
+          description: Health Data last updated date
+          format: date-time
+        lastUpdatedBy:
+          maxLength: 50
+          minLength: 2
+          type: string
+          description: Health Data last updated by user
+        device:
+          $ref: '#/components/schemas/DeviceDTO'
+        metadata:
+          uniqueItems: true
+          type: array
+          description: Metadata for health data
+          items:
+            $ref: '#/components/schemas/KeyValueMapping'
+        healthValues:
+          uniqueItems: true
+          type: array
+          items:
+            $ref: '#/components/schemas/HealthValueDTO'
+      description: >-
+        HealthData stores device health data, this is generic entity for all
+        health data
+    LoginVM:
+      required:
+        - password
+        - username
+      type: object
+      properties:
+        username:
+          maxLength: 50
+          minLength: 1
+          type: string
+        password:
+          maxLength: 100
+          minLength: 4
+          type: string
+        rememberMe:
+          type: boolean
+    JWTToken:
+      type: object
+      properties:
+        id_token:
+          type: string
+    User:
+      required:
+        - login
+      type: object
+      properties:
+        createdBy:
+          type: string
+        createdDate:
+          type: string
+          format: date-time
+        lastModifiedBy:
+          type: string
+        lastModifiedDate:
+          type: string
+          format: date-time
+        id:
+          type: string
+        login:
+          maxLength: 50
+          minLength: 1
+          type: string
+        firstName:
+          maxLength: 50
+          minLength: 0
+          type: string
+        lastName:
+          maxLength: 50
+          minLength: 0
+          type: string
+        email:
+          maxLength: 254
+          minLength: 5
+          type: string
+        activated:
+          type: boolean
+        langKey:
+          maxLength: 10
+          minLength: 2
+          type: string
+        imageUrl:
+          maxLength: 256
+          minLength: 0
+          type: string
+        resetDate:
+          type: string
+          format: date-time
+    KeyAndPasswordVM:
+      type: object
+      properties:
+        key:
+          type: string
+        newPassword:
+          type: string
+    PasswordChangeDTO:
+      type: object
+      properties:
+        currentPassword:
+          type: string
+        newPassword:
+          type: string
