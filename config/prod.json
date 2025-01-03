@@ -1,0 +1,95 @@
+{
+    "apiUrl": "https://dhw-api.sekoya.tech/api/v1",
+    "defaultLanguage": "en",
+    "defaultTheme": "dark",
+    "app": {
+        "version": "1.0.0",
+        "translations": [
+            {
+                "language": "en",
+                "name": "Dhw",
+                "description": "Dhw"
+            },
+            {
+                "language": "tr",
+                "name": "Dhw",
+                "description": "Dhw"
+            }
+        ]
+    },
+    "contact": {
+        "pageUrl": "https://dhw.sekoya.tech/contact",
+        "email": "contact@dhw.sekoya.tech",
+        "phone": "+90 555 555 55 55",
+        "address": "1234567890",
+        "facebook": "https://www.facebook.com/dhw.sekoya.tech",
+        "instagram": "https://www.instagram.com/dhw.sekoya.tech",
+        "twitter": "https://www.twitter.com/dhw.sekoya.tech",
+        "linkedin": "https://www.linkedin.com/dhw.sekoya.tech",
+        "youtube": "https://www.youtube.com/dhw.sekoya.tech"
+    },
+    "privacyPolicy": {
+        "translations": [
+            {
+                "language": "en",
+                "url": "https://dhw.sekoya.tech/privacy-policy",
+                "title": "Privacy Policy",
+                "description": "Privacy Policy"
+            },
+            {
+                "language": "tr",
+                "url": "https://dhw.sekoya.tech/privacy-policy",
+                "title": "Gizlilik Politikası",
+                "description": "Gizlilik Politikası"
+            }
+        ]
+    },
+    "termsOfService": {
+        "translations": [
+            {
+                "language": "en",
+                "url": "https://dhw.sekoya.tech/terms-of-service",
+                "title": "Terms of Service",
+                "description": "Terms of Service"
+            },
+            {
+                "language": "tr",
+                "url": "https://dhw.sekoya.tech/terms-of-service",
+                "title": "Hizmet Şartları",
+                "description": "Hizmet Şartları"
+            }
+        ]
+    },
+    "about": {
+        "translations": [
+            {
+                "language": "en",
+                "url": "https://dhw.sekoya.tech/about",
+                "title": "About",
+                "description": "About"
+            },
+            {
+                "language": "tr",
+                "url": "https://dhw.sekoya.tech/about",
+                "title": "Hakkımızda",
+                "description": "Hakkımızda"
+            }
+        ]
+    },
+    "faq": {
+        "translations": [
+            {
+                "language": "en",
+                "url": "https://dhw.sekoya.tech/faq",
+                "title": "FAQ",
+                "description": "FAQ"
+            },
+            {
+                "language": "tr",
+                "url": "https://dhw.sekoya.tech/faq",
+                "title": "Sıkça Sorulan Sorular",
+                "description": "Sıkça Sorulan Sorular"
+            }
+        ]
+    }
+}
