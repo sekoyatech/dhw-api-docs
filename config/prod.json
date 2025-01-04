@@ -1,5 +1,5 @@
 {
-    "apiUrl": "https://dhw-api.sekoya.tech/api/v1",
+    "apiUrl": "https://dhw-api.onrender.com/api",
     "defaultLanguage": "en",
     "defaultTheme": "dark",
     "app": {
